@@ -1,6 +1,10 @@
 body {
   font-family: "Roboto", "Noto Sans KR", sans-serif;
   font-size: 16px;
+  background-image: url("../images/ev-header2-rotate.jpg");
+  background-size: contain;
+  background-position-x: -90%;
+  background-position-y: -360%;
 }
 
 a {
@@ -8,22 +12,76 @@ a {
   text-decoration: none;
 }
 
+#header {
+  display: flex;
+  position: relative;
+  height: 50px;
+  padding: 35px 0;
+  justify-content: flex-start;
+  padding-left: 50px;
+  background-color: #000;
+}
+#header:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+#header h2 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.5;
+  z-index: 99;
+}
+
 #main {
+  display: flex;
   position: relative;
   width: 100%;
   height: 100%;
 }
-#main .option_box {
+#main .optionContainer {
+  position: relative;
+  height: calc(100vh - 120px);
+  top: 0;
+  left: 0;
+  z-index: 99;
   display: flex;
+  flex-basis: 20%;
   justify-content: center;
-  margin: 50px 0;
+  align-items: center;
+}
+#main .optionContainer .optionBox {
+  justify-content: center;
+  border: 1px solid #000;
+  height: calc(100vh - 160px);
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  margin: 10px;
+  width: 100%;
   font-size: 20px;
+  position: relative;
 }
-#main .option_box p {
+#main .optionContainer .optionBox p {
   padding: 20px;
+  color: #fff;
 }
-
-#map {
+#main .mapContainer {
   display: flex;
+  position: relative;
   justify-content: center;
+  align-items: center;
+  flex-basis: 80%;
+  width: 100%;
+  flex-grow: 1;
+}
+#main .mapContainer .map {
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
 }
